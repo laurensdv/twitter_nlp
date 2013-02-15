@@ -30,7 +30,8 @@ class MainHandler(tornado.web.RequestHandler):
         p1.stdout.close()
         output = p2.communicate()[0]
         self.write(output)
-        lines = str(output).line_tokenize(blanklines='discard')
+        lines = str(output).split('\\n')
+        print(lines)
         print (len(lines))
         for line in lines[:-1]:
                 tokens = word_tokenize(line)
