@@ -5,10 +5,10 @@
 # It is necessary for linking the library.
 
 # The name that we can dlopen(3).
-dlname=''
+dlname='libtinysvm.so.1'
 
 # Names of this library.
-library_names=''
+library_names='libtinysvm.so.1.2.0 libtinysvm.so.1 libtinysvm.so'
 
 # The name of the static archive.
 old_library='libtinysvm.a'
@@ -29,4 +29,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='/home/aritter/twitter_nlp/TinySVM-0.09/..//lib'
+libdir='/home/laurens/twitter_nlp/TinySVM-0.09/..//lib'
