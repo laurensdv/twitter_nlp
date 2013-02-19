@@ -19,13 +19,14 @@ define("config_file", default="app_config.yml", help="app_config file")
 
 class MainHandler(tornado.web.RequestHandler):
     def get(self):
-        text = "@Jessica_Chobot did you see the yakuza vs zombies.... smh but cool at the same time\n\
-        Please enter the desired filename\n\
-        PM conveys 'concern' to David Cameron over graft claims\n\
-        Vijay Mallya surprises Kingfisher staff with month's salary\n\
-        Military plane crashes in Yemen, several killed\n\
-        the #www2013 list of accepted papers is available now: http://bit.ly/W10ua9\n"
-        
+        #Use %0A (=\n) as URL seperator between tweets   
+        text = self.get_argument("tweets", "")
+        if text == "":
+                self.set_status(404)
+                self.write('No input text detected')
+                self.finish()
+                return
+                
         print ('TemporaryFile:')
         millis =  int(round(time.time()*1000))
         filename = '/tmp/guess_my_name.%s.tmp' % millis
